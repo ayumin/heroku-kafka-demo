@@ -1,0 +1,35 @@
+{
+  "name": "Apache Kafka on Heroku Demo",
+  "description": "Twitter Streaming with Kafka",
+  "keywords": [
+    "kafka",
+    "node",
+    "twitter"
+  ],
+  "website": "https://www.heroku.com/kafka",
+  "env": {
+    "CONSUMER_KEY": {
+      "description": "Replace your Twitter App's Consumer key"
+    },
+    "CONSUMER_SECRET": {
+      "description": "Replace your Twitter App's Consumer secret"
+    },
+    "ACCESS_TOKEN": {
+      "description": "Replace your Twitter App's Access token"
+    },
+    "ACCESS_TOKEN_SECRET": {
+      "description": "Replace your Twitter App's Access secret"
+    },
+    "WEB_CONCURRENCY": {
+      "description": "The number of processes to run",
+      "value": "5"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "Standerd-1X"
+    }
+  },
+  "image": "heroku/node"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "heroku-kafka-demo",
+  "version": "1.0.0",
+  "description": "Twitter streaming with Apache Kafka on Heroku Demo",
+  "repository": "https://github.com/ayumin/heroku-kafka-demo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Ayumu Aizawa",
+  "license": "MIT",
+  "dependencies": {
+    "no-kafka": "^3.2.5",
+    "ntwitter": "^0.5.0",
+    "socket.io": "^2.0.3"
+  }
+}
