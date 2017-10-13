@@ -28,7 +28,7 @@
   "formation": {
     "web": {
       "quantity": 1,
-      "size": "Standerd-1X"
+      "size": "Standard-1X"
     }
   },
   "image": "heroku/node"
