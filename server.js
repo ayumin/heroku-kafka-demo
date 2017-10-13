@@ -17,6 +17,7 @@ var app = require('http').createServer(function(req, res) {
 var io = require('socket.io').listen(app);
 io.sockets.on('connection', function(socket) {
   socket.on('msg', function(data) {
+    console.log('* connected ' + data);
     io.sockets.emit('msg', data);
   });
 });
@@ -25,7 +26,9 @@ twit.stream('statuses/sample', function(stream) {
   stream.on('data', function (data) {
     if(data.lang === 'ja') {
       io.sockets.emit('msg', data);
-      console.log(data);
+      if(process.env.DRAIN_TWEETS === '1') {
+        console.log(data);
+      }
     }
   });
 });
