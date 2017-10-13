@@ -1,6 +1,8 @@
 var util = require('util');
 var twitter = require('ntwitter');
 
+process.on('uncaughtException', console.debug);
+
 var twit = new twitter({
   consumer_key: process.env.CONSUMER_KEY,
   consumer_secret: process.env.CONSUMER_SECRET,
