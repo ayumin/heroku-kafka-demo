@@ -1,7 +1,9 @@
 var util = require('util');
 var twitter = require('ntwitter');
 
-process.on('uncaughtException', console.debug);
+process.on('uncaughtException', function(e) {
+  console.debug(e);
+});
 
 var twit = new twitter({
   consumer_key: process.env.CONSUMER_KEY,
@@ -21,7 +23,7 @@ io.sockets.on('connection', function(socket) {
   socket.on('msg', function(data) {
     console.log('* connected ' + data);
     io.sockets.emit('msg', data);
-  });
+  })
 });
 
 twit.stream('statuses/sample', function(stream) {
@@ -32,6 +34,6 @@ twit.stream('statuses/sample', function(stream) {
         console.log(data);
       }
     }
-  });
+  })
 });
 
