@@ -36,4 +36,3 @@ twit.stream('statuses/sample', function(stream) {
     }
   })
 });
-
