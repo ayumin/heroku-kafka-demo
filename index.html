@@ -12,9 +12,17 @@
   <script src="/socket.io/socket.io.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  body {
+    background-color: #3b2f63;
+  }
+  img {
+    margin: 5px;
+  }
+  </style>
   <title>Apache Kafka on Heroku Demo</title>
 </head>
-<body style="background-color: #3b2f63;">
+<body>
 <script>
 $(function() {
   var socket = io.connect();
@@ -23,7 +31,7 @@ $(function() {
     console.log(data);
     user = '<img src=\"' + data.user.profile_image_url + '\">';
     text = data.text;
-    $('#stream').prepend( '<div class=\"well\"><p>' + user + text + '</p>' + '</div>');
+    $('#stream').prepend( '<div class=\"well\"><p>' + user + text + '</p></div>');
   });
 });
 </script>
