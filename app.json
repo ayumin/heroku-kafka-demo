@@ -29,6 +29,10 @@
     "web": {
       "quantity": 1,
       "size": "Standard-1X"
+    },
+    "worker": {
+      "quantity": 0,
+      "size": "Standard-1X"
     }
   },
   "image": "heroku/node"
