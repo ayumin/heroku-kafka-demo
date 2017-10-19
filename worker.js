@@ -1,7 +1,8 @@
-'use strict'
-var Kafka = require('no-kafka');
+'use strict';
 
-var consumer = new Kafka.SimpleConsumer({
+const Kafka = require('no-kafka');
+
+let consumer = new Kafka.SimpleConsumer({
   idleTimeout: 1000,
   clientId: 'sample-consumer',
   connectionString: process.env.KAFKA_URL.replace(/\+ssl/g,''),
@@ -11,15 +12,16 @@ var consumer = new Kafka.SimpleConsumer({
   }
 });
 
-console.log("Kafka consumer has been started");
 
-var dataHandler = function (messageSet, topic, partition) {
-  messageSet.forEach(function (m) {
-    console.log(topic, partition, m.offset, m.message.value.toString('utf8'));
-  });
+let dataHandler = (messageSet, topic, partition) => {
+  for(m of messageSet) {
+    (m) => { console.log(topic, partition, m.offset, m.message.value.toString('utf8'));
+  }
 };
 
-return consumer.init().then(function() {
-  var topic = process.env.KAFKA_PREFIX + process.env.KAFKA_TOPIC
-  consumer.subscribe(topic, dataHandler);
-});
+consumer.init().then(
+  () => {
+    let topic = process.env.KAFKA_PREFIX + process.env.KAFKA_TOPIC;
+    consumer.subscribe(topic, dataHandler);
+  }
+);
