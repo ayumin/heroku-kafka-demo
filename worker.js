@@ -14,14 +14,12 @@ let consumer = new Kafka.SimpleConsumer({
 
 
 let dataHandler = (messageSet, topic, partition) => {
-  for(m of messageSet) {
-    (m) => { console.log(topic, partition, m.offset, m.message.value.toString('utf8'));
+  for(let m of messageSet){
+    (m) => { console.log(topic, partition, m.offset, m.message.value.toString('utf8')); }
   }
 };
 
-consumer.init().then(
-  () => {
-    let topic = process.env.KAFKA_PREFIX + process.env.KAFKA_TOPIC;
-    consumer.subscribe(topic, dataHandler);
-  }
-);
+consumer.init().then(() => {
+  let topic = process.env.KAFKA_PREFIX + process.env.KAFKA_TOPIC;
+  consumer.subscribe(topic, dataHandler);
+});
