@@ -18,7 +18,14 @@
       "description": "Replace your Twitter App's Access token"
     },
     "ACCESS_TOKEN_SECRET": {
-      "description": "Replace your Twitter App's Access secret"
+      "description": "Replace your Twitter App's Access token secret"
+    },
+    "KAFKA_TOPIC": {
+      "description": ""
+    },
+    "DRAIN_TWEETS": {
+      "description": "Set 1 for drain tweets to log",
+      "value": "0"
     },
     "WEB_CONCURRENCY": {
       "description": "The number of processes to run",
