@@ -1,5 +1,7 @@
 # Apache Kafka on Heroku Demo
 
+![](https://github.com/ayumin/heroku-kafka-demo/raw/master/images/slide.png)
+
 ## Deploy
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
